@@ -4,6 +4,8 @@ var cwd = process.cwd()
 
 if (process.env.ELECTRON_PATH)
   process.env.ELECTRON_PATH.split(':')
-    .forEach(function (p) {
-      paths.push(resolve(cwd, p))
-    })
+    .forEach(push)
+
+function push (path) {
+  paths.push(resolve(cwd, path))
+}
